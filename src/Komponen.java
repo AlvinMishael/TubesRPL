@@ -8,8 +8,7 @@
  *
  * @author Alexander Bleuvito Fevrier
  */
-public class Komponen {
-    public static void main(String[] args) {
-        
-    }
+class Komponen {
+    String nama;
+    int bobot;
 }
