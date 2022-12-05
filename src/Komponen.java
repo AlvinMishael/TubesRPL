@@ -9,6 +9,11 @@
  * @author Alexander Bleuvito Fevrier
  */
 class Komponen {
-    String nama;
-    int bobot;
+    private String nama;
+    private int bobot;
+
+    public Komponen(String nama, int bobot) {
+        this.nama = nama;
+        this.bobot = bobot;
+    }
 }
