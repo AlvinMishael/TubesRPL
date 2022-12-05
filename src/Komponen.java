@@ -16,4 +16,12 @@ class Komponen {
         this.nama = nama;
         this.bobot = bobot;
     }
+
+    public String getnama() {
+        return this.nama;
+    }
+
+    public int getBobot() {
+        return this.bobot;
+    }
 }
