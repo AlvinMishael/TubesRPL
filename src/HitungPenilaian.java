@@ -9,5 +9,7 @@
  * @author alvin
  */
 public class HitungPenilaian {
-    
+    public static void main(String[] args) {
+        
+    }
 }
