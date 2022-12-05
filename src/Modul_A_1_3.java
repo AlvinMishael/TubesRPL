@@ -6,56 +6,65 @@
 
 /**
  *
- * @author alvin
+ * @author alvin, Alexander Bleuvito Fevrier
  */
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
-public class HitungPenilaian {
+
+public class Modul_A_1_3 {
+    public static void init(Penilaian penilaian) {
+        penilaian.addNilai("Presentasi", 20);
+        penilaian.addNilai("Implementasi", 40);
+        penilaian.addNilai("Skripsi", 40);
+    }
+
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        Penilaian Tahun2020 = new Penilaian("Tahun 2020");
-        Tahun2020.addNilai("Presentasi", 20);
-        Tahun2020.addNilai("Implementasi", 40);
-        Tahun2020.addNilai("Skripsi", 40);
-        System.out.println("Aplikasi Sidang Skripsi");
+
+        Penilaian penilaian = new Penilaian("Tahun 2020");
+        init(penilaian);
+
+        System.out.println("Aplikasi Sidang Skripsi: Hitung Nilai Sidang");
         String barrier = "-------------------";
         System.out.println("");
         System.out.println(barrier);
         System.out.println("");
-        System.out.println("Penilaian " + Tahun2020.getNama());
+        System.out.println("Penilaian " + penilaian.getNama());
         double total = 0;
-        for(int i =0; i < Tahun2020.getSize(); i++){
-            System.out.print((i+1) + ". Masukan Nilai " + Tahun2020.getKomponen(i).getnama() + " dengan Bobot " + Tahun2020.getKomponen(i).getBobot()+ "% : ");
+        for (int i = 0; i < penilaian.getSize(); i++) {
+            Komponen komponen = penilaian.getKomponen(i);
+            System.out.print((i + 1) + ". Masukan Nilai " + komponen.getnama() + " dengan Bobot "
+                    + komponen.getBobot() + "%: ");
             double nilai = sc.nextDouble();
-            total += (nilai*Tahun2020.getKomponen(i).getBobot())/100;
+            total += (nilai * komponen.getBobot()) / 100;
         }
-        System.out.printf("Nilai Akhir: %.2f%n" ,total);
+        System.out.printf("Nilai Akhir: %.2f%n", total);
     }
 }
 
 class Penilaian {
     private String nama;
     private List<Komponen> list;
-    
-    public Penilaian(String nama){
+
+    public Penilaian(String nama) {
         this.nama = nama;
         list = new ArrayList<>();
     }
-    
-    public void addNilai(String nama,  int bobot){
+
+    public void addNilai(String nama, int bobot) {
         list.add(new Komponen(nama, bobot));
     }
-    
-    public int getSize(){
+
+    public int getSize() {
         return list.size();
     }
-    
-    public String getNama(){
+
+    public String getNama() {
         return nama;
     }
-    
-    public Komponen getKomponen(int idx){
+
+    public Komponen getKomponen(int idx) {
         return list.get(idx);
     }
 }
