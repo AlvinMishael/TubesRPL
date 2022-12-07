@@ -14,9 +14,22 @@ import java.util.Scanner;
 import org.junit.Assert;
 public class Modul_A_1_3 {
     public static void init(Penilaian penilaian) {
-        penilaian.addNilai("Presentasi", 20);
-        penilaian.addNilai("Implementasi", 40);
-        penilaian.addNilai("Skripsi", 40);
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Masukkan jumlah komponen: ");
+        int jumlahPenilaian = sc.nextInt();
+        while(jumlahPenilaian > 0) {
+            System.out.println("Masukkan nama komponen: ");
+            String nama = sc.next();
+
+            System.out.println("Masukkan bobot komponen: ");
+            int bobot = sc.nextInt();
+
+            penilaian.addNilai(nama, bobot);
+            jumlahPenilaian--;
+        }
+        // penilaian.addNilai("Presentasi", 20);
+        // penilaian.addNilai("Implementasi", 40);
+        // penilaian.addNilai("Skripsi", 40);
     }
 
     public static void main(String[] args) {
