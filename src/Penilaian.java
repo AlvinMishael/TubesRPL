@@ -10,7 +10,7 @@
  */
 import java.util.ArrayList;
 import java.util.List;
-class Penilaian {
+public class Penilaian {
     String nama;
     List<Komponen> list;
     
