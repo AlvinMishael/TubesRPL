@@ -13,15 +13,16 @@ import java.util.Scanner;
  * @author keannen renaldo halim, neil christopher, wilson
  */
 public class Main {
-    public double hitungNilai(String namaFile) {
-        ArrayList<Nilai> kumpulanNilai = new ArrayList<>();
+    public double hitungNilai(String[] namaFile) {
+        ArrayList<Nilai> kumpulanNilai = new ArrayList<>(); 
+        int idx = 0;
         while (true) {
-            if(namaFile.equals("0")){//jika diisi dengan 0, artinya file nya sudah habis
+            if(namaFile[idx].equals("0")){//jika diisi dengan 0, artinya file nya sudah habis
                 break;
             }
             try {
                 Nilai n1 = new Nilai();
-                FileInputStream fis = new FileInputStream(namaFile);
+                FileInputStream fis = new FileInputStream(namaFile[idx]);
                 Scanner sc1 = new Scanner(fis);
                 while (sc1.hasNextLine()) {//scan isi dari file per baris
                     String row = sc1.nextLine();
@@ -29,6 +30,8 @@ public class Main {
                 }
                 sc1.close();
                 kumpulanNilai.add(n1);//masukkan nilai ke dalam kumpulanNilai
+                
+                idx++;
             } catch (IOException e) {
                 e.printStackTrace();
             }
