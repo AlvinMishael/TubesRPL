@@ -1,0 +1,3 @@
+ppt 20 100
+presentasi 2 80
+penguasaanMateri 78 80
