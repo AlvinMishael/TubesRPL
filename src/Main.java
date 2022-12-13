@@ -14,7 +14,7 @@ import static org.junit.jupiter.api.Assertions.*;
  * @author keannen renaldo halim, neil christopher, wilson
  */
 public class Main {
-    public double hitungNilai(String[] namaFile) {
+    public double hitungNilai(String[] namaFile)  {
         ArrayList<Nilai> kumpulanNilai = new ArrayList<>(); 
         int idx = 0;
         while (true) {
