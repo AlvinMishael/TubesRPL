@@ -13,12 +13,9 @@ import java.util.Scanner;
  * @author keannen renaldo halim, neil christopher, wilson
  */
 public class Main {
-
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
+    public double hitungNilai(String namaFile) {
         ArrayList<Nilai> kumpulanNilai = new ArrayList<>();
         while (true) {
-            String namaFile = sc.next(); // path ke file nilai
             if(namaFile.equals("0")){//jika diisi dengan 0, artinya file nya sudah habis
                 break;
             }
@@ -43,6 +40,9 @@ public class Main {
             total+=kumpulanNilai.get(i).getTotal();//cari total semua nilai
         }
         
-        System.out.println(total/banyak);//hitung rata rata dari semua nilai
+        return total/banyak;
+    }
+
+    public static void main(String[] args) {
     }
 }
