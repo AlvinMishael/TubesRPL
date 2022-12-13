@@ -11,7 +11,6 @@
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
-import org.junit.Assert;
 public class Modul_A_1_3 {
     public static void init(Penilaian penilaian) {
         Scanner sc = new Scanner(System.in);
