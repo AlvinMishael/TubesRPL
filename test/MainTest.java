@@ -6,6 +6,7 @@
 import java.io.FileNotFoundException;
 import org.junit.Test;
 import static org.junit.Assert.*;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 /**
  *
@@ -112,7 +113,7 @@ public class MainTest {
         double result = instance.hitungNilai(namaFile);
         assertNotEquals(expResult, result);
     }
-
+//
     @Test
     public void t11() {
         System.out.println("t11");
@@ -213,7 +214,7 @@ public class MainTest {
             fail(msg);
         }
     }
-
+//
     @Test
     public void t20() {
         System.out.println("t20");
@@ -223,7 +224,7 @@ public class MainTest {
         double result = instance.hitungNilai(namaFile);
         assertEquals(expResult, result, 0);
     }
-
+//
     @Test
     public void t21() {
         System.out.println("t21");
@@ -254,5 +255,36 @@ public class MainTest {
         double result = instance.hitungNilai(namaFile);
         assertNotEquals(expResult, result, 0);
     }
+    
+    @Test
+    public void t24() {
+        System.out.println("t24");
+        String[] namaFile = new String[]{"D:\\whitebox\\t24.txt", "0"};
+        Main instance = new Main();
+        double expResult = 52.00;
+        double result = instance.hitungNilai(namaFile);
+        assertNotEquals(expResult, result, 0);
+    }
+    
+    @Test
+    public void t25() {
+        System.out.println("t25");
+        String[] namaFile = new String[]{"D:\\whitebox\\t25.txt", "0"};
+        Main instance = new Main();
+        double expResult = 58;
+        double result = instance.hitungNilai(namaFile);
+        assertNotEquals(expResult, result, 0);
+    }
+    
+    @Test
+    public void t26() {
+        System.out.println("t26");
+        String[] namaFile = new String[]{"D:\\whitebox\\t26.txt", "0"};
+        Main instance = new Main();
+        double expResult = 58;
+        double result = instance.hitungNilai(namaFile);
+        assertNotEquals(expResult, result, 0);
+    }
+    
 
 }
